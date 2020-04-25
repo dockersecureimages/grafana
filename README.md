@@ -2,66 +2,64 @@
 
 Grafana, image is based on the Alpine base image with 0 vulnerabilities.
 
-## Current Docker image
+## Current Docker image (~193MB)
 
 Security scanning using Clair
 ```
-clair-scanner secureimages/grafana:6.7.2-alpine-3.11.5
-2020/04/02 15:29:52 [INFO] ▶ Start clair-scanner
-2020/04/02 15:29:54 [INFO] ▶ Server listening on port 9279
-2020/04/02 15:29:54 [INFO] ▶ Analyzing dac63304c60354902922613d675ec533c6e10879f72d49b7602575ae5d5f9257
-2020/04/02 15:29:55 [INFO] ▶ Analyzing 27de13179ccbad47da1b31c2d72a71da9968e377b2627a48c2e3479b1826ad0b
-2020/04/02 15:29:55 [INFO] ▶ Analyzing 5651df75ff5dee098098da157b580782cbe1cc1b00ccde82aa70dcb5df3c8f23
-2020/04/02 15:29:55 [INFO] ▶ Analyzing 07eda0e677ff658794a4cbe11ba5258efa34c583282b5ed2cfde03af0e8e96f1
-2020/04/02 15:29:55 [INFO] ▶ Analyzing 07a4b46d2f686ada569519d1d01563f649065186da56195e1a7b60976a74a046
-2020/04/02 15:29:55 [INFO] ▶ Image [secureimages/grafana:6.7.2-alpine-3.11.5] contains NO unapproved vulnerabilities
+clair-scanner secureimages/grafana:6.7.3-alpine-3.11.6
+2020/04/25 12:40:49 [INFO] ▶ Start clair-scanner
+2020/04/25 12:40:51 [INFO] ▶ Server listening on port 9279
+2020/04/25 12:40:51 [INFO] ▶ Analyzing a5304328ea0f44bd1ac8bb5416ad6b7cc3b747ac232c6af66d7d9f12e9854344
+2020/04/25 12:40:51 [INFO] ▶ Analyzing b596437d1771dc5e0755a38affa1a476ae8e70e1ee486d095fa148f62205b39f
+2020/04/25 12:40:51 [INFO] ▶ Analyzing 6541c8bc434246df97e340d42baa4fae413a47c9287245c5e7513f452db03916
+2020/04/25 12:40:51 [INFO] ▶ Analyzing 9ad4a6a4a9b3013e2d994e989cb8505735d1f142737207befb1a7f40c8845f59
+2020/04/25 12:40:51 [INFO] ▶ Analyzing 9101d65c5f58a6c2d3f981a77280ed4146996da5131b926cfed6929aab991a5a
+2020/04/25 12:40:51 [INFO] ▶ Image [secureimages/grafana:6.7.3-alpine-3.11.6] contains NO unapproved vulnerabilities
 ```
 
 Security scanning using Trivy
 ```
-docker run --rm -v /var/run/docker.sock:/var/run/docker.sock:ro aquasec/trivy:0.5.3 --no-progress secureimages/grafana:6.7.2-alpine-3.11.5
-2020-04-02T12:30:00.713Z        INFO    Need to update DB
-2020-04-02T12:30:00.713Z        INFO    Downloading DB...
-2020-04-02T12:30:04.254Z        INFO    Reopening DB...
-2020-04-02T12:30:07.984Z        INFO    Detecting Alpine vulnerabilities...
+docker run --rm -v /var/run/docker.sock:/var/run/docker.sock:ro aquasec/trivy:0.6.0 --no-progress secureimages/grafana:6.7.3-alpine-3.11.6
+2020-04-25T09:40:54.168Z        INFO    Need to update DB
+2020-04-25T09:40:54.168Z        INFO    Downloading DB...
+2020-04-25T09:41:00.210Z        INFO    Detecting Alpine vulnerabilities...
 
-secureimages/grafana:6.7.2-alpine-3.11.5 (alpine 3.11.5)
+secureimages/grafana:6.7.3-alpine-3.11.6 (alpine 3.11.6)
 ========================================================
 Total: 0 (UNKNOWN: 0, LOW: 0, MEDIUM: 0, HIGH: 0, CRITICAL: 0)
 ```
 
-## Official Docker image
+## Official Docker image (~233MB)
 
 [https://hub.docker.com/r/grafana/grafana](https://hub.docker.com/r/grafana/grafana)
 ```
-docker pull grafana/grafana:6.7.2
+docker pull grafana/grafana:6.7.3
 ```
 
 Security scanning using Clair
 ```
-clair-scanner grafana/grafana:6.7.2
-2020/04/02 15:30:13 [INFO] ▶ Start clair-scanner
-2020/04/02 15:30:17 [INFO] ▶ Server listening on port 9279
-2020/04/02 15:30:17 [INFO] ▶ Analyzing 9b18a7418f4cfa9967437868cacf628a9d4c9791bff790888f5a33ef7830c46a
-2020/04/02 15:30:17 [INFO] ▶ Analyzing 15798959709b3fe9e37468eb1c3d907aef34aa2538346bfbe906b797adc20b0e
-2020/04/02 15:30:17 [INFO] ▶ Analyzing 6ce4ac67014f1e696fa3d674492b9c876a207b742548ea8f6b2a1a1deb7f150b
-2020/04/02 15:30:17 [INFO] ▶ Analyzing 6354b52f299bf247a8f6547239768a9944814c5023606a3e43e61cd1d1b4d5de
-2020/04/02 15:30:17 [INFO] ▶ Analyzing 111e4e23b26e57bd9cccb177e4e164bf3ee56a590c40db75a22b97e34a717b88
-2020/04/02 15:30:17 [INFO] ▶ Analyzing 06c24583a7377c30cad4f22540843cddeb96710d5bf8f5e8f9a0164b76943238
-2020/04/02 15:30:17 [INFO] ▶ Analyzing 978779d729b8e3c1d04d9dfcc813093c2eecc72bc1588b539c0dd986df29a634
-2020/04/02 15:30:17 [INFO] ▶ Analyzing d3bdac85b409fc5309868e2f3d093ec686a852b07dd86f156a6d4eb0c7661073
-2020/04/02 15:30:17 [INFO] ▶ Image [grafana/grafana:6.7.2] contains NO unapproved vulnerabilities
+clair-scanner grafana/grafana:6.7.3
+2020/04/25 12:41:07 [INFO] ▶ Start clair-scanner
+2020/04/25 12:41:11 [INFO] ▶ Server listening on port 9279
+2020/04/25 12:41:11 [INFO] ▶ Analyzing 9b18a7418f4cfa9967437868cacf628a9d4c9791bff790888f5a33ef7830c46a
+2020/04/25 12:41:11 [INFO] ▶ Analyzing 6f429de321b69e4e6f4c14ff76e0bf83b6dbe5bc96e41aac0b97f189f9f59580
+2020/04/25 12:41:11 [INFO] ▶ Analyzing 5aa45a90130d1cfc82b9d5c74836179c015caf0ab93d6d40293f36cd9034b36c
+2020/04/25 12:41:11 [INFO] ▶ Analyzing f2e4b96d51c8c5ef622c39c5c1d9b4a278df7f1ffdc2dfcc50f16c62931ff3a1
+2020/04/25 12:41:11 [INFO] ▶ Analyzing a8e60de19adf31769d76020f4b42acfa646fe3c1447d11a0db8fe0eb9f3e94f1
+2020/04/25 12:41:11 [INFO] ▶ Analyzing a8ba7fdc78a8ed67ad1a2f8d29d9dc0db52427a54c4b15d05e8961605d2078aa
+2020/04/25 12:41:11 [INFO] ▶ Analyzing a693351f2d6be98f4b26cbc7b4b6d28a1857fca7678731531f72452b2e87206f
+2020/04/25 12:41:11 [INFO] ▶ Analyzing bd60f5ba7184dac6ff47c466af3bd5d2180d3e207b2a39a8c586e2dba1e9d98d
+2020/04/25 12:41:11 [INFO] ▶ Image [grafana/grafana:6.7.3] contains NO unapproved vulnerabilities
 ```
 
 Security scanning using Trivy
 ```
-docker run --rm -v /var/run/docker.sock:/var/run/docker.sock:ro aquasec/trivy:0.5.3 --no-progress grafana/grafana:6.7.2
-2020-04-02T12:30:25.433Z        INFO    Need to update DB
-2020-04-02T12:30:25.433Z        INFO    Downloading DB...
-2020-04-02T12:30:30.045Z        INFO    Reopening DB...
-2020-04-02T12:30:35.575Z        INFO    Detecting Alpine vulnerabilities...
+docker run --rm -v /var/run/docker.sock:/var/run/docker.sock:ro aquasec/trivy:0.6.0 --no-progress grafana/grafana:6.7.3
+2020-04-25T09:41:14.566Z        INFO    Need to update DB
+2020-04-25T09:41:14.566Z        INFO    Downloading DB...
+2020-04-25T09:41:22.884Z        INFO    Detecting Alpine vulnerabilities...
 
-grafana/grafana:6.7.2 (alpine 3.10.4)
+grafana/grafana:6.7.3 (alpine 3.10.4)
 =====================================
 Total: 0 (UNKNOWN: 0, LOW: 0, MEDIUM: 0, HIGH: 0, CRITICAL: 0)
 ```

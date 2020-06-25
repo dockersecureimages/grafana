@@ -2,11 +2,11 @@
 
 Grafana, image is based on the Alpine base image with 0 vulnerabilities.
 
-## Current Docker image (~157MB)
+## Current Docker image (~158MB)
 
 Security scanning using Clair
 ```
-clair-scanner secureimages/grafana:7.0.3-alpine-3.12.0
+clair-scanner secureimages/grafana:7.0.4-alpine-3.12.0
 2020/06/11 13:20:46 [INFO] ▶ Start clair-scanner
 2020/06/11 13:20:47 [INFO] ▶ Server listening on port 9279
 2020/06/11 13:20:47 [INFO] ▶ Analyzing 76de98d374759ed05698adec9aa042db7bc0f62c25fb612c0f9be1419a581421
@@ -19,7 +19,7 @@ clair-scanner secureimages/grafana:7.0.3-alpine-3.12.0
 
 Security scanning using Trivy
 ```
-docker run --rm -v /var/run/docker.sock:/var/run/docker.sock:ro aquasec/trivy:0.9.1 --no-progress secureimages/grafana:7.0.3-alpine-3.12.0
+docker run --rm -v /var/run/docker.sock:/var/run/docker.sock:ro aquasec/trivy:0.9.1 --no-progress secureimages/grafana:7.0.4-alpine-3.12.0
 2020-06-11T10:20:52.058Z        INFO    Need to update DB
 2020-06-11T10:20:52.058Z        INFO    Downloading DB...
 2020-06-11T10:20:57.552Z        INFO    Detecting Alpine vulnerabilities...
@@ -29,16 +29,16 @@ secureimages/grafana:7.0.3-alpine-3.12.0 (alpine 3.12.0)
 Total: 0 (UNKNOWN: 0, LOW: 0, MEDIUM: 0, HIGH: 0, CRITICAL: 0)
 ```
 
-## Official Docker image (~158MB)
+## Official Docker image (~159MB)
 
 [https://hub.docker.com/r/grafana/grafana](https://hub.docker.com/r/grafana/grafana)
 ```
-docker pull grafana/grafana:7.0.3
+docker pull grafana/grafana:7.0.4
 ```
 
 Security scanning using Clair
 ```
-clair-scanner grafana/grafana:7.0.3
+clair-scanner grafana/grafana:7.0.4
 2020/06/11 13:21:02 [INFO] ▶ Start clair-scanner
 2020/06/11 13:21:05 [INFO] ▶ Server listening on port 9279
 2020/06/11 13:21:05 [INFO] ▶ Analyzing a5304328ea0f44bd1ac8bb5416ad6b7cc3b747ac232c6af66d7d9f12e9854344
@@ -52,7 +52,7 @@ clair-scanner grafana/grafana:7.0.3
 
 Security scanning using Trivy
 ```
-docker run --rm -v /var/run/docker.sock:/var/run/docker.sock:ro aquasec/trivy:0.9.1 --no-progress grafana/grafana:7.0.3
+docker run --rm -v /var/run/docker.sock:/var/run/docker.sock:ro aquasec/trivy:0.9.1 --no-progress grafana/grafana:7.0.4
 2020-06-11T10:21:09.487Z        INFO    Need to update DB
 2020-06-11T10:21:09.487Z        INFO    Downloading DB...
 2020-06-11T10:21:17.463Z        INFO    Detecting Alpine vulnerabilities...

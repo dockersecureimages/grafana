@@ -1,9 +1,9 @@
-FROM alpine:3.13.4
+FROM alpine:3.13.5
 LABEL website="Secure Docker Images https://secureimages.dev"
 LABEL description="We secure your business from scratch."
 LABEL maintainer="support@secureimages.dev"
 
-ARG GRAFANA_VERSION=7.5.2
+ARG GRAFANA_VERSION=7.5.4
 
 ENV PATH=/usr/share/grafana/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
     GF_PATHS_CONFIG="/etc/grafana/grafana.ini" \

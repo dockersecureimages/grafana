@@ -6,27 +6,27 @@ Grafana, image is based on the Alpine base image with 0 vulnerabilities.
 
 Security scanning using Clair
 ```
-clair-scanner secureimages/grafana:7.5.2-alpine-3.13.4
-2021/04/01 12:34:22 [INFO] ▶ Start clair-scanner
-2021/04/01 12:34:23 [INFO] ▶ Server listening on port 9279
-2021/04/01 12:34:23 [INFO] ▶ Analyzing e46e108285519ee26fa254dfaab29d7d350c0c321daa1350567c5202109138ca
-2021/04/01 12:34:23 [INFO] ▶ Analyzing e4a5b2da037a92ca5a00f3ff855718157fa02b56dc591f0f253d54d67c86b84b
-2021/04/01 12:34:23 [INFO] ▶ Analyzing fda81c5f40de5d5ae84082c60adf1c15f39968242aafd56b7bf700fc3f08b4ba
-2021/04/01 12:34:24 [INFO] ▶ Analyzing b5b9399046d9173f9f67cee420eb42227c7d981083e66d721f48b47c0699ffe5
-2021/04/01 12:34:24 [INFO] ▶ Analyzing e19d87ddaae7cf83a36a42d35fababb8d74e282287148b9030f9e4abc9632861
-2021/04/01 12:34:24 [WARN] ▶ Image [secureimages/grafana:7.5.2-alpine-3.13.4] contains 1 total vulnerabilities
-2021/04/01 12:34:24 [ERRO] ▶ Image [secureimages/grafana:7.5.2-alpine-3.13.4] contains 1 unapproved vulnerabilities
+clair-scanner secureimages/grafana:7.5.4-alpine-3.13.5
+2021/04/16 08:19:38 [INFO] ▶ Start clair-scanner
+2021/04/16 08:19:40 [INFO] ▶ Server listening on port 9279
+2021/04/16 08:19:40 [INFO] ▶ Analyzing d09376239d873ace0c02b1b53834f0fe3167a652a8fc436465db0171eb639b61
+2021/04/16 08:19:40 [INFO] ▶ Analyzing 73aa4fa97f60ade25277cf88c52fec13ff1dd214f314ac7b0fa9409eafabf8ef
+2021/04/16 08:19:40 [INFO] ▶ Analyzing 1fc60f672e8860361c6a2b1e918972f10a43f72a7a430f2cdfe42de55a853012
+2021/04/16 08:19:40 [INFO] ▶ Analyzing 7a9e2578981f6615adce41582430738334b9161a54aae81e99cae81c5bd388a5
+2021/04/16 08:19:40 [INFO] ▶ Analyzing cb1edf5ed3eb2c7122566363aa19eeac78d60c5f06ceeb64ca2c1d2fb3b010c1
+2021/04/16 08:19:40 [WARN] ▶ Image [secureimages/grafana:7.5.4-alpine-3.13.5] contains 1 total vulnerabilities
+2021/04/16 08:19:40 [ERRO] ▶ Image [secureimages/grafana:7.5.4-alpine-3.13.5] contains 1 unapproved vulnerabilities
 ```
 
 Security scanning using Trivy
 ```
-docker run --rm -v /var/run/docker.sock:/var/run/docker.sock:ro aquasec/trivy:0.16.0 --no-progress secureimages/grafana:7.5.2-alpine-3.13.4
-2021-04-01T12:34:27.317Z        INFO    Need to update DB
-2021-04-01T12:34:27.317Z        INFO    Downloading DB...
-2021-04-01T12:34:31.697Z        INFO    Detecting Alpine vulnerabilities...
-2021-04-01T12:34:31.698Z        INFO    Trivy skips scanning programming language libraries because no supported file was detected
+docker run --rm -v /var/run/docker.sock:/var/run/docker.sock:ro aquasec/trivy:0.16.0 --no-progress secureimages/grafana:7.5.4-alpine-3.13.5
+2021-04-16T08:19:47.055Z        INFO    Need to update DB
+2021-04-16T08:19:47.055Z        INFO    Downloading DB...
+2021-04-16T08:19:51.841Z        INFO    Detecting Alpine vulnerabilities...
+2021-04-16T08:19:51.842Z        INFO    Trivy skips scanning programming language libraries because no supported file was detected
 
-secureimages/grafana:7.5.2-alpine-3.13.4 (alpine 3.13.4)
+secureimages/grafana:7.5.4-alpine-3.13.5 (alpine 3.13.5)
 ========================================================
 Total: 0 (UNKNOWN: 0, LOW: 0, MEDIUM: 0, HIGH: 0, CRITICAL: 0)
 ```
@@ -35,35 +35,35 @@ Total: 0 (UNKNOWN: 0, LOW: 0, MEDIUM: 0, HIGH: 0, CRITICAL: 0)
 
 [https://hub.docker.com/r/grafana/grafana](https://hub.docker.com/r/grafana/grafana)
 ```
-docker pull grafana/grafana:7.5.2
+docker pull grafana/grafana:7.5.4
 ```
 
 Security scanning using Clair
 ```
-clair-scanner grafana/grafana:7.5.2
-2021/04/01 12:34:59 [INFO] ▶ Start clair-scanner
-2021/04/01 12:35:02 [INFO] ▶ Server listening on port 9279
-2021/04/01 12:35:02 [INFO] ▶ Analyzing 99bff23309b01c2f69d3363705845feb9ccd8d86446d0d12c0674efa010b2a2b
-2021/04/01 12:35:02 [INFO] ▶ Analyzing eae0d58856ab7e43714b5c8def67ebd4395677f9339ba1e2c39c5d6b3b20f3a7
-2021/04/01 12:35:02 [INFO] ▶ Analyzing ed091c68ae609c97e967a65d7772baa367e9beea916738146e8a6e800ab3c2fa
-2021/04/01 12:35:02 [INFO] ▶ Analyzing dd0b8c898f547844ccb1c7aa72c7a1bb9375a542946ceeb330d85ddcc23ffa72
-2021/04/01 12:35:02 [INFO] ▶ Analyzing e0d7e9c1e4f5f37975c777f13cd17fc6fdb592c303812dbfaccc3159fde81448
-2021/04/01 12:35:02 [INFO] ▶ Analyzing 658e766bf19a8c38a22b4f5c168cee88154fa3d4d1ee8682afe98dbeb1d6d9a9
-2021/04/01 12:35:02 [INFO] ▶ Analyzing 49fca005a502e1dbd13c9d4487ca089e7e612c9482db54b7ab09dc6726a2a263
-2021/04/01 12:35:02 [INFO] ▶ Analyzing ffa0ee599135af000d88a334d37d27fbb25034113ce5910a93146f2f8e806bd4
-2021/04/01 12:35:02 [WARN] ▶ Image [grafana/grafana:7.5.2] contains 1 total vulnerabilities
-2021/04/01 12:35:02 [ERRO] ▶ Image [grafana/grafana:7.5.2] contains 1 unapproved vulnerabilities
+clair-scanner grafana/grafana:7.5.4
+2021/04/16 08:19:56 [INFO] ▶ Start clair-scanner
+2021/04/16 08:19:59 [INFO] ▶ Server listening on port 9279
+2021/04/16 08:19:59 [INFO] ▶ Analyzing e7f151c62f076c04e8461fd943c95f19f8dc206f17d5a21f029a9ca99c3ab0ad
+2021/04/16 08:19:59 [INFO] ▶ Analyzing c1e91afbb627be720b16cf9d410641462361c183720722438268bfaa86f6235a
+2021/04/16 08:19:59 [INFO] ▶ Analyzing 9ead78cffc29e9fe4af4565a6d143d5e29f538d16151266af7a263fcc861e41e
+2021/04/16 08:19:59 [INFO] ▶ Analyzing 73eda56f560dd23943dfa0b9b5fcb5b67edd79aa48e240da4b7704436ad58a96
+2021/04/16 08:19:59 [INFO] ▶ Analyzing 0cb9a39cc36eb2a00eb9cd5ae26dff9f6d80fd0b3ab40f28552136d4ce7724ce
+2021/04/16 08:19:59 [INFO] ▶ Analyzing 1537da0bda192c9840ae1fe9fde034dc0c0bf8c9cf75fbdb17b4572d8446afe4
+2021/04/16 08:19:59 [INFO] ▶ Analyzing 9c2003ac84e493d76cdfdf453764f0614b81ea0c00879584e2568d7e2d25b303
+2021/04/16 08:19:59 [INFO] ▶ Analyzing 2408b6ea815c3f5e9ca6b4f6a81b2111a2e0e71c6fda06ba98ac21e466f76908
+2021/04/16 08:19:59 [WARN] ▶ Image [grafana/grafana:7.5.4] contains 1 total vulnerabilities
+2021/04/16 08:19:59 [ERRO] ▶ Image [grafana/grafana:7.5.4] contains 1 unapproved vulnerabilities
 ```
 
 Security scanning using Trivy
 ```
-docker run --rm -v /var/run/docker.sock:/var/run/docker.sock:ro aquasec/trivy:0.16.0 --no-progress grafana/grafana:7.5.2
-2021-04-01T12:35:08.685Z        INFO    Need to update DB
-2021-04-01T12:35:08.685Z        INFO    Downloading DB...
-2021-04-01T12:35:15.030Z        INFO    Detecting Alpine vulnerabilities...
-2021-04-01T12:35:15.033Z        INFO    Trivy skips scanning programming language libraries because no supported file was detected
+docker run --rm -v /var/run/docker.sock:/var/run/docker.sock:ro aquasec/trivy:0.16.0 --no-progress grafana/grafana:7.5.4
+2021-04-16T08:20:03.968Z        INFO    Need to update DB
+2021-04-16T08:20:03.968Z        INFO    Downloading DB...
+2021-04-16T08:20:09.796Z        INFO    Detecting Alpine vulnerabilities...
+2021-04-16T08:20:09.797Z        INFO    Trivy skips scanning programming language libraries because no supported file was detected
 
-grafana/grafana:7.5.2 (alpine 3.12.5)
+grafana/grafana:7.5.4 (alpine 3.12.6)
 =====================================
-Total: 2 (UNKNOWN: 0, LOW: 0, MEDIUM: 0, HIGH: 2, CRITICAL: 0)
+Total: 1 (UNKNOWN: 1, LOW: 0, MEDIUM: 0, HIGH: 0, CRITICAL: 0)
 ```
